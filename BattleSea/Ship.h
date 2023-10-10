@@ -5,7 +5,7 @@
 using namespace std;
 struct Ship
 {
-
+	Ship() {}
 	Ship(char _view, vector<pair<char, int>> _coords) :view{_view}
 	{
 		for (auto p : _coords)
