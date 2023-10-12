@@ -15,34 +15,16 @@ struct Computer
 	}
 private :
 
-	//нужно правильно протестировать функцию
-	bool check_distanse(Ship new_ship)
-	{
-		for (auto s : ships)
-		{
-			for (auto p: s.position)
-			{
-				//получаем координату корабля
-  				auto key = p.first;
-				if (new_ship.position.count({static_cast<char>(key.first + 1),key.second }) > 0)
-					return false;
-				if (new_ship.position.count({ static_cast<char>(key.first - 1),key.second }) > 0)
-					return false;
-				if (new_ship.position.count({ key.first,key.second+1 }) > 0)
-					return false;
-				if (new_ship.position.count({ key.first,key.second - 1 }) > 0)
-					return false;
-			}
-		}
-		return true;
-	}
+	
 
 public:
+	vector<pair<char, int>> buffer_points;
 	void create_Ship(Map* m, int size_ship)
 	{
+		
 		Ship ship;
 		//Если корабль невозможно добавить, то мы по новой запускаем функцию создания корабля
-		while(m->add_ship(ship) == false or check_distanse(ship)==false)
+		while(m->add_ship(ship,ships) == false)
 		{
 			srand(time(NULL));
 			vector<pair<char, int>> data;

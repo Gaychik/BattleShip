@@ -39,6 +39,28 @@ private:
         }
         return true;
     }
+    //ѕрокерка дистанции между новым кораблем и корабл€ми на карте
+    bool check_distanse(Ship new_ship, vector<Ship> ships_player)
+    {
+        for (auto s : ships_player)
+        {
+            for (auto p : s.position)
+            {
+                //получаем координату корабл€
+                auto key = p.first;
+                if (new_ship.position.count({ static_cast<char>(key.first + 1),key.second }) > 0)
+                    return false;
+                if (new_ship.position.count({ static_cast<char>(key.first - 1),key.second }) > 0)
+                    return false;
+                if (new_ship.position.count({ key.first,key.second + 1 }) > 0)
+                    return false;
+                if (new_ship.position.count({ key.first,key.second - 1 }) > 0)
+                    return false;
+            }
+        }
+        return true;
+    }
+
     bool check_position_ship(Ship ship)
     {  //ѕроверка общей строки и общего столбца
         auto first_pair = ship.position.begin();
@@ -107,13 +129,13 @@ public:
             cout << endl;
         }
     }
-    bool add_ship(Ship ship)
+    bool add_ship(Ship ship,vector<Ship> ships_player)
     {
         if (ship.position.size() == 0)
             return false;
       
         //≈сли точки корабл€ расположены р€дом,не по диагонали и корабль  можно поставить на карту
-        if (check_position_ship(ship) and is_exist_ship(ship))
+        if (check_position_ship(ship) and is_exist_ship(ship) and check_distanse(ship, ships_player))
         {
             if (is_hide == true)
             {

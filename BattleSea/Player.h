@@ -24,7 +24,7 @@ public:
 		}
 		auto ship=Ship(status, data);
       //Если корабль невозможно добавить, то мы по новой запускаем функцию создания корабля
-		if (m->add_ship(ship) == false)
+		if (m->add_ship(ship,ships) == false)
 		{
 			cout << "Ошибка при добавлении корабля, повторите попытку!" << endl;
 			create_Ship(m, size_ship);
@@ -35,6 +35,7 @@ public:
 			system("cls");
 			m->show();
 			cout << "Корабль успешно добавлен" << endl;
+
 		}
 	}
 	vector<Ship> ships;
