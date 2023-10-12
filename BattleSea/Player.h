@@ -6,6 +6,8 @@
 
 struct Player
 {
+	Player()
+	{};
 	Player(char _status):status{_status}
 	{
 	}

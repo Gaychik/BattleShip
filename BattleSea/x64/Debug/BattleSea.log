@@ -1,18 +1,18 @@
 ﻿  BattleSea.cpp
-E:\_Личные папки преподавателей\Gaychikov\BattleSea\BattleSea\Computer.h(42,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\_Личные папки преподавателей\Gaychikov\BattleSea\BattleSea\Computer.h(47,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.34.31933\include\utility(172,48): warning C4267: 'initializing': conversion from 'size_t' to '_Ty2', possible loss of data
           with
           [
               _Ty2=int
           ]
-E:\_Личные папки преподавателей\Gaychikov\BattleSea\BattleSea\Map.h(25,1): message : see reference to function template instantiation 'std::pair<char,int>::pair<_Elem&,size_t&,0>(_Other1,_Other2) noexcept' being compiled
+E:\_Личные папки преподавателей\Gaychikov\BattleSea\BattleSea\Map.h(27,1): message : see reference to function template instantiation 'std::pair<char,int>::pair<_Elem&,size_t&,0>(_Other1,_Other2) noexcept' being compiled
           with
           [
               _Elem=char,
               _Other1=char &,
               _Other2=size_t &
           ]
-E:\_Личные папки преподавателей\Gaychikov\BattleSea\BattleSea\Map.h(25,35): message : see reference to function template instantiation 'std::pair<char,int>::pair<_Elem&,size_t&,0>(_Other1,_Other2) noexcept' being compiled
+E:\_Личные папки преподавателей\Gaychikov\BattleSea\BattleSea\Map.h(27,35): message : see reference to function template instantiation 'std::pair<char,int>::pair<_Elem&,size_t&,0>(_Other1,_Other2) noexcept' being compiled
           with
           [
               _Elem=char,
@@ -24,14 +24,14 @@ C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.34.319
           [
               _Ty1=char
           ]
-E:\_Личные папки преподавателей\Gaychikov\BattleSea\BattleSea\Computer.h(58,1): message : see reference to function template instantiation 'std::pair<char,int>::pair<size_t,_Ty2&,0>(_Other1 &&,_Other2) noexcept' being compiled
+E:\_Личные папки преподавателей\Gaychikov\BattleSea\BattleSea\Computer.h(63,1): message : see reference to function template instantiation 'std::pair<char,int>::pair<size_t,_Ty2&,0>(_Other1 &&,_Other2) noexcept' being compiled
           with
           [
               _Ty2=int,
               _Other1=size_t,
               _Other2=int &
           ]
-E:\_Личные папки преподавателей\Gaychikov\BattleSea\BattleSea\Computer.h(58,20): message : see reference to function template instantiation 'std::pair<char,int>::pair<size_t,_Ty2&,0>(_Other1 &&,_Other2) noexcept' being compiled
+E:\_Личные папки преподавателей\Gaychikov\BattleSea\BattleSea\Computer.h(63,20): message : see reference to function template instantiation 'std::pair<char,int>::pair<size_t,_Ty2&,0>(_Other1 &&,_Other2) noexcept' being compiled
           with
           [
               _Ty2=int,

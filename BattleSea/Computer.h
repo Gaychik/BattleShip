@@ -8,20 +8,25 @@
 
 struct Computer
 {
+	Computer() {};
+	
 	Computer(char _status) :status{ _status }
 	{
 	}
 private :
+
+	//нужно правильно протестировать функцию
 	bool check_distanse(Ship new_ship)
 	{
 		for (auto s : ships)
 		{
 			for (auto p: s.position)
 			{
-				auto key = p.first;//получаем координату корабля
-				if (new_ship.position.count({ key.first + 1,key.second }) > 0)
+				//получаем координату корабля
+  				auto key = p.first;
+				if (new_ship.position.count({static_cast<char>(key.first + 1),key.second }) > 0)
 					return false;
-				if (new_ship.position.count({ key.first - 1,key.second }) > 0)
+				if (new_ship.position.count({ static_cast<char>(key.first - 1),key.second }) > 0)
 					return false;
 				if (new_ship.position.count({ key.first,key.second+1 }) > 0)
 					return false;
@@ -43,7 +48,7 @@ public:
 			vector<pair<char, int>> data;
 			pair<char,int> random_point = { rand() % 10 + 65, rand() % 10 + 1 };
 			data.push_back(random_point);
-			auto random_path = rand() % 2;
+			auto random_path = rand() % 2;//случайно выбирается направление формирования корабля
 			switch (random_path)
 			{
 			case 0://Фиксируем название строки

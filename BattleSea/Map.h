@@ -16,8 +16,10 @@
 using namespace std;
 struct Map 
 {
-    Map()
+    Map() {};
+    Map(bool hide)
     {
+        is_hide = hide;
             for (auto s : rows)
             {
                 for (size_t i = 1; i < 11; i++)
@@ -27,6 +29,7 @@ struct Map
             }
     }
 private:
+    bool is_hide;
     string rows = "ABCDEFGHIJ";
     bool is_exist_ship(Ship ship)
     {
@@ -112,9 +115,12 @@ public:
         //Если точки корабля расположены рядом,не по диагонали и корабль  можно поставить на карту
         if (check_position_ship(ship) and is_exist_ship(ship))
         {
-            for (auto p : ship.position)
+            if (is_hide == true)
             {
-                field[p.first] = p.second;
+                for (auto p : ship.position)
+                {
+                    field[p.first] = p.second;
+                }
             }
             return true;
         }  
